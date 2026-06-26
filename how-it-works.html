@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How It Works — FallGuard</title>
+  <meta name="description" content="How FallGuard detects a fall: the accelerometer measures movement, the ESP32-C6 computes total acceleration, detects impact, and alerts the caretaker app in under three seconds.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a class="nav__brand" href="index.html">
+        <span class="nav__logo" aria-hidden="true">F</span>
+        FallGuard
+      </a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span class="visually-hidden">Toggle navigation menu</span>
+        <span aria-hidden="true">&#9776;</span>
+      </button>
+      <ul class="nav__list" id="primary-nav">
+        <li><a class="nav__link" href="index.html">Home</a></li>
+        <li><a class="nav__link" href="how-it-works.html" aria-current="page">How It Works</a></li>
+        <li><a class="nav__link" href="features.html">Features</a></li>
+        <li><a class="nav__link" href="about.html">About</a></li>
+        <li><a class="nav__link" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <h1 class="section__title">How FallGuard works</h1>
+        <p class="section__lead">From the moment of a fall to a caretaker's alert in under three seconds &mdash; here is the full flow.</p>
+
+        <ol class="steps mt-lg">
+          <li class="steps__item">
+            <div>
+              <h3>The accelerometer measures movement</h3>
+              <p>A 3-axis accelerometer on the wearable device samples acceleration along the X, Y, and Z axes many times per second, capturing every motion of the wearer.</p>
+            </div>
+          </li>
+          <li class="steps__item">
+            <div>
+              <h3>The ESP32-C6 computes total acceleration</h3>
+              <p>The ESP32-C6 microcontroller combines the three axes into a single total-acceleration magnitude, giving one clear signal that represents overall movement intensity.</p>
+            </div>
+          </li>
+          <li class="steps__item">
+            <div>
+              <h3>It detects an impact</h3>
+              <p>The firmware watches for the signature of a fall &mdash; a sharp spike in total acceleration followed by sudden stillness &mdash; and distinguishes it from normal daily activity.</p>
+            </div>
+          </li>
+          <li class="steps__item">
+            <div>
+              <h3>It alerts the caretaker app in under 3 seconds</h3>
+              <p>When a fall is confirmed, the device sends a notification over Wi-Fi or Bluetooth so the caretaker's phone is alerted in under three seconds, with the time and device clearly shown.</p>
+            </div>
+          </li>
+        </ol>
+
+        <p class="mt-lg"><a class="btn btn--primary" href="features.html">Explore the features</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div>
+        <p class="site-footer__brand">FallGuard</p>
+        <p>IoT fall detection for caretakers and the people they look after.</p>
+      </div>
+      <nav aria-label="Footer">
+        <ul class="site-footer__nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="site-footer__bottom">
+      <div class="container">
+        <p>&copy; 2026 FallGuard. IoT fall detection that keeps caretakers connected.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

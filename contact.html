@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact &amp; Support — FallGuard</title>
+  <meta name="description" content="Contact and support for FallGuard. Use the placeholder contact form or the support details below to get in touch.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a class="nav__brand" href="index.html">
+        <span class="nav__logo" aria-hidden="true">F</span>
+        FallGuard
+      </a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span class="visually-hidden">Toggle navigation menu</span>
+        <span aria-hidden="true">&#9776;</span>
+      </button>
+      <ul class="nav__list" id="primary-nav">
+        <li><a class="nav__link" href="index.html">Home</a></li>
+        <li><a class="nav__link" href="how-it-works.html">How It Works</a></li>
+        <li><a class="nav__link" href="features.html">Features</a></li>
+        <li><a class="nav__link" href="about.html">About</a></li>
+        <li><a class="nav__link" href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <h1 class="section__title">Contact &amp; support</h1>
+        <p class="section__lead">Have a question about FallGuard? Send a message below or reach us directly using the support details.</p>
+
+        <div class="grid grid--2 mt-lg">
+          <div class="card">
+            <h2>Send us a message</h2>
+            <form class="form mt-lg" aria-label="Contact form" onsubmit="return false;">
+              <div class="form__group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" autocomplete="name" placeholder="Your name">
+              </div>
+              <div class="form__group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com">
+              </div>
+              <div class="form__group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="How can we help?"></textarea>
+              </div>
+              <button class="btn btn--primary" type="submit">Send message</button>
+              <!-- Wire this form to your backend or email service when ready. -->
+              <p class="form__note">Prefer email? Reach us anytime at <a href="mailto:osyka.dmytro@gmail.com">osyka.dmytro@gmail.com</a>.</p>
+            </form>
+          </div>
+
+          <div class="card">
+            <h2>Support</h2>
+            <ul class="support-list mt-lg">
+              <li>
+                <span class="support-label">Email</span>
+                <span><a href="mailto:osyka.dmytro@gmail.com">osyka.dmytro@gmail.com</a></span>
+              </li>
+              <li>
+                <span class="support-label">Documentation</span>
+                <span>See the How It Works and Features pages</span>
+              </li>
+              <li>
+                <span class="support-label">Response time</span>
+                <span>We reply within two business days</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div>
+        <p class="site-footer__brand">FallGuard</p>
+        <p>IoT fall detection for caretakers and the people they look after.</p>
+      </div>
+      <nav aria-label="Footer">
+        <ul class="site-footer__nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="site-footer__bottom">
+      <div class="container">
+        <p>&copy; 2026 FallGuard. IoT fall detection that keeps caretakers connected.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

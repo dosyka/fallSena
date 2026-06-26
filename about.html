@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — FallGuard</title>
+  <meta name="description" content="About FallGuard: an IoT fall-detection system that combines an ESP32-C6 device, a 3-axis accelerometer, and a caretaker app to detect falls and alert caretakers in under three seconds. Meet the creator behind it.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a class="nav__brand" href="index.html">
+        <span class="nav__logo" aria-hidden="true">F</span>
+        FallGuard
+      </a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span class="visually-hidden">Toggle navigation menu</span>
+        <span aria-hidden="true">&#9776;</span>
+      </button>
+      <ul class="nav__list" id="primary-nav">
+        <li><a class="nav__link" href="index.html">Home</a></li>
+        <li><a class="nav__link" href="how-it-works.html">How It Works</a></li>
+        <li><a class="nav__link" href="features.html">Features</a></li>
+        <li><a class="nav__link" href="about.html" aria-current="page">About</a></li>
+        <li><a class="nav__link" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <h1 class="section__title">About FallGuard</h1>
+        <p class="section__lead">FallGuard is an IoT safety system that detects falls and alerts caretakers in under three seconds. It brings together an ESP32-C6 microcontroller, a 3-axis accelerometer, and a companion caretaker app into one simple, reliable device that watches over the people who matter most.</p>
+
+        <div class="grid grid--3 mt-lg">
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">&#127919;</div>
+            <h3>What it is</h3>
+            <p>A compact wearable device and caretaker app that work together to keep a loved one safe at home and on the move.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">&#9889;</div>
+            <h3>What it does</h3>
+            <p>It senses a fall the instant it happens and sends an alert straight to the caretaker's phone &mdash; in under three seconds.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">&#10084;</div>
+            <h3>Why it matters</h3>
+            <p>Fast alerts mean help arrives sooner. FallGuard gives families confidence and the people they care for their independence.</p>
+          </article>
+        </div>
+
+        <section class="creator mt-lg" aria-labelledby="creator-heading">
+          <!-- PLACEHOLDER: personalize the creator details below (name, role, story). -->
+          <figure class="creator__portrait">
+            <!-- OWNER: drop a real portrait photo at src/web/images/founder.jpg
+                 (portrait or square crop, ~680px on the short edge looks crisp)
+                 to replace this styled placeholder. The initials below stay
+                 visible as a graceful fallback until that file exists. -->
+            <span class="creator__portrait-fallback" aria-hidden="true">DO</span>
+            <img class="creator__portrait-img" src="images/founder.jpg"
+                 alt="Portrait of Dmytro Osyka, founder of FallGuard">
+          </figure>
+          <div class="creator__story">
+            <span class="creator__eyebrow">Meet the founder</span>
+            <h2 id="creator-heading" class="creator__name">Dmytro Osyka</h2>
+            <p class="creator__role">Founder &amp; Engineer</p>
+            <!-- PLACEHOLDER STORY: replace these two paragraphs with your own founder story. -->
+            <p class="creator__bio">FallGuard started with a worry that a lot of families know well &mdash; the fear that a loved one could fall while no one is around to notice. Dmytro set out to turn that worry into something useful: a small device that simply pays attention, all the time, and speaks up the moment something goes wrong.</p>
+            <p class="creator__bio">He designed the hardware, wrote the detection firmware, and shaped the caretaker experience end to end. FallGuard is built on a simple belief &mdash; that thoughtful technology should give families peace of mind and help the people they care for stay independent for longer.</p>
+            <p class="creator__contact">
+              <a class="btn btn--primary" href="mailto:osyka.dmytro@gmail.com">Get in touch</a>
+            </p>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div>
+        <p class="site-footer__brand">FallGuard</p>
+        <p>IoT fall detection for caretakers and the people they look after.</p>
+      </div>
+      <nav aria-label="Footer">
+        <ul class="site-footer__nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="site-footer__bottom">
+      <div class="container">
+        <p>&copy; 2026 FallGuard. IoT fall detection that keeps caretakers connected.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
