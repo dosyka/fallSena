@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How It Works — FallGuard</title>
-  <meta name="description" content="How FallGuard detects a fall: the accelerometer measures movement, the ESP32-C6 computes total acceleration, detects impact, and alerts the caretaker app in under three seconds.">
+  <title>How It Works | FallSena</title>
+  <meta name="description" content="A quick look at how FallSena works. The wearable senses movement, smart detection spots a real fall, and it alerts the caretaker's phone within seconds.">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -13,8 +13,8 @@
   <header class="site-header">
     <nav class="nav container" aria-label="Primary">
       <a class="nav__brand" href="index.html">
-        <span class="nav__logo" aria-hidden="true">F</span>
-        FallGuard
+        <img class="nav__logo-img" src="fallsena-icon-light.svg" alt="">
+        <span class="nav__wordmark">Fall<span class="nav__wordmark-accent">Sena</span></span>
       </a>
       <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
         <span class="visually-hidden">Toggle navigation menu</span>
@@ -33,32 +33,26 @@
   <main id="main">
     <section class="section">
       <div class="container">
-        <h1 class="section__title">How FallGuard works</h1>
-        <p class="section__lead">From the moment of a fall to a caretaker's alert in under three seconds &mdash; here is the full flow.</p>
+        <h1 class="section__title">How FallSena works</h1>
+        <p class="section__lead">FallSena keeps things simple. The wearable senses movement, its smart detection knows a real fall from everyday life, and it calls for help fast.</p>
 
         <ol class="steps mt-lg">
           <li class="steps__item">
             <div>
-              <h3>The accelerometer measures movement</h3>
-              <p>A 3-axis accelerometer on the wearable device samples acceleration along the X, Y, and Z axes many times per second, capturing every motion of the wearer.</p>
+              <h3>The wearable senses movement</h3>
+              <p>The device has a small motion sensor. As the wearer goes about their day, it quietly keeps track of how they are moving.</p>
             </div>
           </li>
           <li class="steps__item">
             <div>
-              <h3>The ESP32-C6 computes total acceleration</h3>
-              <p>The ESP32-C6 microcontroller combines the three axes into a single total-acceleration magnitude, giving one clear signal that represents overall movement intensity.</p>
+              <h3>Smart detection spots a real fall</h3>
+              <p>Built-in detection tells a genuine fall apart from everyday activity. It looks at how hard the body moves, so it avoids false alarms.</p>
             </div>
           </li>
           <li class="steps__item">
             <div>
-              <h3>It detects an impact</h3>
-              <p>The firmware watches for the signature of a fall &mdash; a sharp spike in total acceleration followed by sudden stillness &mdash; and distinguishes it from normal daily activity.</p>
-            </div>
-          </li>
-          <li class="steps__item">
-            <div>
-              <h3>It alerts the caretaker app in under 3 seconds</h3>
-              <p>When a fall is confirmed, the device sends a notification over Wi-Fi or Bluetooth so the caretaker's phone is alerted in under three seconds, with the time and device clearly shown.</p>
+              <h3>It alerts the caretaker within seconds</h3>
+              <p>Once a fall is detected, the device sends a message over Bluetooth. The caretaker's phone is alerted within seconds, so help can be on the way quickly.</p>
             </div>
           </li>
         </ol>
@@ -71,7 +65,7 @@
   <footer class="site-footer">
     <div class="container site-footer__inner">
       <div>
-        <p class="site-footer__brand">FallGuard</p>
+        <p class="site-footer__brand">FallSena</p>
         <p>IoT fall detection for caretakers and the people they look after.</p>
       </div>
       <nav aria-label="Footer">
@@ -86,7 +80,7 @@
     </div>
     <div class="site-footer__bottom">
       <div class="container">
-        <p>&copy; 2026 FallGuard. IoT fall detection that keeps caretakers connected.</p>
+        <p>&copy; 2026 FallSena. IoT fall detection that keeps caretakers connected.</p>
       </div>
     </div>
   </footer>

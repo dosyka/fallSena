@@ -1,6 +1,3 @@
-/* FallGuard — minimal mobile nav toggle.
-   No dependencies. Progressive enhancement: nav works without JS,
-   this only adds the open/close behavior on small screens. */
 (function () {
   "use strict";
 
@@ -17,7 +14,6 @@
       toggle.setAttribute("aria-expanded", String(isOpen));
     });
 
-    // Close the menu when a link is chosen (mobile).
     list.addEventListener("click", function (event) {
       if (event.target.closest(".nav__link")) {
         list.classList.remove("is-open");

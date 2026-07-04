@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About — FallGuard</title>
-  <meta name="description" content="About FallGuard: an IoT fall-detection system that combines an ESP32-C6 device, a 3-axis accelerometer, and a caretaker app to detect falls and alert caretakers in under three seconds. Meet the creator behind it.">
+  <title>About | FallSena</title>
+  <meta name="description" content="About FallSena: an IoT fall-detection system that combines an ESP32-C6 device, a 3-axis accelerometer, and a caretaker app to detect falls and alert caretakers within seconds. Meet the creator behind it.">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -13,8 +13,8 @@
   <header class="site-header">
     <nav class="nav container" aria-label="Primary">
       <a class="nav__brand" href="index.html">
-        <span class="nav__logo" aria-hidden="true">F</span>
-        FallGuard
+        <img class="nav__logo-img" src="fallsena-icon-light.svg" alt="">
+        <span class="nav__wordmark">Fall<span class="nav__wordmark-accent">Sena</span></span>
       </a>
       <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
         <span class="visually-hidden">Toggle navigation menu</span>
@@ -33,45 +33,39 @@
   <main id="main">
     <section class="section">
       <div class="container">
-        <h1 class="section__title">About FallGuard</h1>
-        <p class="section__lead">FallGuard is an IoT safety system that detects falls and alerts caretakers in under three seconds. It brings together an ESP32-C6 microcontroller, a 3-axis accelerometer, and a companion caretaker app into one simple, reliable device that watches over the people who matter most.</p>
+        <h1 class="section__title">About FallSena</h1>
+        <p class="section__lead">FallSena is an IoT safety system that detects falls and alerts caretakers within seconds. It brings together an ESP32-C6 microcontroller, a 3-axis accelerometer, and a companion caretaker app into one simple, reliable device that watches over the people who matter most.</p>
 
         <div class="grid grid--3 mt-lg">
           <article class="card">
-            <div class="card__icon" aria-hidden="true">&#127919;</div>
+            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></div>
             <h3>What it is</h3>
             <p>A compact wearable device and caretaker app that work together to keep a loved one safe at home and on the move.</p>
           </article>
           <article class="card">
-            <div class="card__icon" aria-hidden="true">&#9889;</div>
+            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></div>
             <h3>What it does</h3>
-            <p>It senses a fall the instant it happens and sends an alert straight to the caretaker's phone &mdash; in under three seconds.</p>
+            <p>It senses a fall the instant it happens and sends an alert straight to the caretaker's phone within seconds.</p>
           </article>
           <article class="card">
-            <div class="card__icon" aria-hidden="true">&#10084;</div>
+            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></div>
             <h3>Why it matters</h3>
-            <p>Fast alerts mean help arrives sooner. FallGuard gives families confidence and the people they care for their independence.</p>
+            <p>Fast alerts mean help arrives sooner. FallSena gives families confidence and the people they care for their independence.</p>
           </article>
         </div>
 
         <section class="creator mt-lg" aria-labelledby="creator-heading">
-          <!-- PLACEHOLDER: personalize the creator details below (name, role, story). -->
           <figure class="creator__portrait">
-            <!-- OWNER: drop a real portrait photo at src/web/images/founder.jpg
-                 (portrait or square crop, ~680px on the short edge looks crisp)
-                 to replace this styled placeholder. The initials below stay
-                 visible as a graceful fallback until that file exists. -->
             <span class="creator__portrait-fallback" aria-hidden="true">DO</span>
-            <img class="creator__portrait-img" src="images/founder.jpg"
-                 alt="Portrait of Dmytro Osyka, founder of FallGuard">
+            <img class="creator__portrait-img" src="images/founder.png"
+                 alt="Portrait of Dmytro Osyka, founder of FallSena">
           </figure>
           <div class="creator__story">
             <span class="creator__eyebrow">Meet the founder</span>
             <h2 id="creator-heading" class="creator__name">Dmytro Osyka</h2>
             <p class="creator__role">Founder &amp; Engineer</p>
-            <!-- PLACEHOLDER STORY: replace these two paragraphs with your own founder story. -->
-            <p class="creator__bio">FallGuard started with a worry that a lot of families know well &mdash; the fear that a loved one could fall while no one is around to notice. Dmytro set out to turn that worry into something useful: a small device that simply pays attention, all the time, and speaks up the moment something goes wrong.</p>
-            <p class="creator__bio">He designed the hardware, wrote the detection firmware, and shaped the caretaker experience end to end. FallGuard is built on a simple belief &mdash; that thoughtful technology should give families peace of mind and help the people they care for stay independent for longer.</p>
+            <p class="creator__bio">I started FallSena due to a worry that many people share: that their loved one may fall down and they won’t get help in time. This is an issue that has troubled me for years. As a black belt in karate, I have come to realize how common falls are, and how dangerous they can be if someone can’t provide aid. The FallSena sensor is designed to expedite the process, bringing the user help as soon as possible by notifying the caretaker through their phone.</p>
+            <p class="creator__bio">The hardware was designed to be affordable and reliable. The software was made to ensure a seamless and swift experience for users and caretakers alike. FallSena was built on a simple belief. Thoughtful and efficient technology should give families peace of mind and help keep those they care for safe.</p>
             <p class="creator__contact">
               <a class="btn btn--primary" href="mailto:osyka.dmytro@gmail.com">Get in touch</a>
             </p>
@@ -84,7 +78,7 @@
   <footer class="site-footer">
     <div class="container site-footer__inner">
       <div>
-        <p class="site-footer__brand">FallGuard</p>
+        <p class="site-footer__brand">FallSena</p>
         <p>IoT fall detection for caretakers and the people they look after.</p>
       </div>
       <nav aria-label="Footer">
@@ -99,7 +93,7 @@
     </div>
     <div class="site-footer__bottom">
       <div class="container">
-        <p>&copy; 2026 FallGuard. IoT fall detection that keeps caretakers connected.</p>
+        <p>&copy; 2026 FallSena. IoT fall detection that keeps caretakers connected.</p>
       </div>
     </div>
   </footer>
