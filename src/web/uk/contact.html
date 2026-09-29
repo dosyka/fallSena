@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакти та підтримка | FallSena</title>
+  <meta name="description" content="Контакти та підтримка FallSena. Скористайтеся тимчасовою контактною формою або наведеними нижче контактами підтримки, щоб зв’язатися з нами.">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="alternate" hreflang="en" href="../contact.html">
+  <link rel="alternate" hreflang="uk" href="contact.html">
+  <link rel="alternate" hreflang="ru" href="../ru/contact.html">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти до основного вмісту</a>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Основна навігація">
+      <a class="nav__brand" href="index.html">
+        <img class="nav__logo-img" src="../fallsena-icon-light.svg" alt="">
+        <span class="nav__wordmark">Fall<span class="nav__wordmark-accent">Sena</span></span>
+      </a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span class="visually-hidden">Відкрити або закрити меню</span>
+        <span aria-hidden="true">&#9776;</span>
+      </button>
+      <ul class="nav__list" id="primary-nav">
+        <li><a class="nav__link" href="index.html">Головна</a></li>
+        <li><a class="nav__link" href="how-it-works.html">Як це працює</a></li>
+        <li><a class="nav__link" href="how-its-made.html">Як це зроблено</a></li>
+        <li><a class="nav__link" href="features.html">Можливості</a></li>
+        <li><a class="nav__link" href="about.html">Про нас</a></li>
+        <li><a class="nav__link" href="contact.html" aria-current="page">Контакти</a></li>
+        <li class="nav__langs"><a class="nav__lang" href="../contact.html" hreflang="en" lang="en">EN</a><span class="nav__lang nav__lang--current" aria-current="true">УКР</span><a class="nav__lang" href="../ru/contact.html" hreflang="ru" lang="ru">РУС</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <h1 class="section__title">Контакти та підтримка</h1>
+        <p class="section__lead">Маєте запитання про FallSena? Надішліть повідомлення нижче або зв’яжіться з нами напряму за контактами підтримки.</p>
+
+        <div class="grid grid--2 mt-lg">
+          <div class="card">
+            <h2>Напишіть нам</h2>
+            <form class="form mt-lg" aria-label="Контактна форма" onsubmit="return false;">
+              <div class="form__group">
+                <label for="name">Ім’я</label>
+                <input type="text" id="name" name="name" autocomplete="name" placeholder="Ваше ім’я">
+              </div>
+              <div class="form__group">
+                <label for="email">Електронна пошта</label>
+                <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com">
+              </div>
+              <div class="form__group">
+                <label for="message">Повідомлення</label>
+                <textarea id="message" name="message" rows="5" placeholder="Чим ми можемо допомогти?"></textarea>
+              </div>
+              <button class="btn btn--primary" type="submit">Надіслати повідомлення</button>
+              <p class="form__note">Зручніше електронною поштою? Пишіть нам будь-коли на <a href="mailto:osyka.dmytro@gmail.com">osyka.dmytro@gmail.com</a>.</p>
+            </form>
+          </div>
+
+          <div class="card">
+            <h2>Підтримка</h2>
+            <ul class="support-list mt-lg">
+              <li>
+                <span class="support-label">Електронна пошта</span>
+                <span><a href="mailto:osyka.dmytro@gmail.com">osyka.dmytro@gmail.com</a></span>
+              </li>
+              <li>
+                <span class="support-label">Документація</span>
+                <span>Див. сторінки «Як це працює» та «Можливості»</span>
+              </li>
+              <li>
+                <span class="support-label">Час відповіді</span>
+                <span>Ми відповідаємо протягом двох робочих днів</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div>
+        <p class="site-footer__brand">FallSena</p>
+        <p>IoT-виявлення падінь для доглядачів і людей, про яких вони піклуються.</p>
+      </div>
+      <nav aria-label="Навігація у футері">
+        <ul class="site-footer__nav">
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="how-it-works.html">Як це працює</a></li>
+          <li><a href="how-its-made.html">Як це зроблено</a></li>
+          <li><a href="features.html">Можливості</a></li>
+          <li><a href="about.html">Про нас</a></li>
+          <li><a href="contact.html">Контакти</a></li>
+          <li><a href="../contact.html" hreflang="en" lang="en">English</a></li>
+          <li><a href="../ru/contact.html" hreflang="ru" lang="ru">Русский</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="site-footer__bottom">
+      <div class="container">
+        <p>&copy; 2026 FallSena. IoT-виявлення падінь, що тримає доглядачів на зв’язку.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

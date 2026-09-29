@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Про нас | FallSena</title>
+  <meta name="description" content="Про FallSena: IoT-система виявлення падінь, що поєднує пристрій на ESP32-C6, 3-осьовий акселерометр і застосунок доглядача, щоб розпізнати падіння і за лічені секунди сповістити доглядачів. Познайомтеся з її творцем.">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="alternate" hreflang="en" href="../about.html">
+  <link rel="alternate" hreflang="uk" href="about.html">
+  <link rel="alternate" hreflang="ru" href="../ru/about.html">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти до основного вмісту</a>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Основна навігація">
+      <a class="nav__brand" href="index.html">
+        <img class="nav__logo-img" src="../fallsena-icon-light.svg" alt="">
+        <span class="nav__wordmark">Fall<span class="nav__wordmark-accent">Sena</span></span>
+      </a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span class="visually-hidden">Відкрити або закрити меню</span>
+        <span aria-hidden="true">&#9776;</span>
+      </button>
+      <ul class="nav__list" id="primary-nav">
+        <li><a class="nav__link" href="index.html">Головна</a></li>
+        <li><a class="nav__link" href="how-it-works.html">Як це працює</a></li>
+        <li><a class="nav__link" href="how-its-made.html">Як це зроблено</a></li>
+        <li><a class="nav__link" href="features.html">Можливості</a></li>
+        <li><a class="nav__link" href="about.html" aria-current="page">Про нас</a></li>
+        <li><a class="nav__link" href="contact.html">Контакти</a></li>
+        <li class="nav__langs"><a class="nav__lang" href="../about.html" hreflang="en" lang="en">EN</a><span class="nav__lang nav__lang--current" aria-current="true">УКР</span><a class="nav__lang" href="../ru/about.html" hreflang="ru" lang="ru">РУС</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <h1 class="section__title">Про FallSena</h1>
+        <p class="section__lead">FallSena є IoT-системою безпеки, яка виявляє падіння і за лічені секунди сповіщає доглядачів. Вона поєднує мікроконтролер ESP32-C6, 3-осьовий акселерометр і супутній застосунок доглядача в одному простому та надійному пристрої, що дбає про найдорожчих вам людей.</p>
+
+        <div class="grid grid--3 mt-lg">
+          <article class="card">
+            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></div>
+            <h3>Що це</h3>
+            <p>Компактний носимий пристрій і застосунок доглядача, які разом оберігають близьку людину і вдома, і поза домом.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></div>
+            <h3>Що він робить</h3>
+            <p>Пристрій відчуває падіння в ту ж мить, коли воно стається, і за лічені секунди надсилає сповіщення прямо на телефон доглядача.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></div>
+            <h3>Чому це важливо</h3>
+            <p>Що швидше надходить сповіщення, то швидше приходить допомога. FallSena дає родинам упевненість, а людям, про яких вони піклуються, змогу залишатися самостійними.</p>
+          </article>
+        </div>
+
+        <section class="creator mt-lg" aria-labelledby="creator-heading">
+          <figure class="creator__portrait">
+            <span class="creator__portrait-fallback" aria-hidden="true">DO</span>
+            <img class="creator__portrait-img" src="../images/founder.png"
+                 alt="Портрет Дмитра Осики, засновника FallSena">
+          </figure>
+          <div class="creator__story">
+            <span class="creator__eyebrow">Знайомтеся із засновником</span>
+            <h2 id="creator-heading" class="creator__name">Дмитро Осика</h2>
+            <p class="creator__role">Засновник та інженер</p>
+            <p class="creator__bio">Я створив FallSena через тривогу, знайому багатьом: що близька людина може впасти, а допомога не встигне вчасно. Ця проблема непокоїть мене вже багато років. Маючи чорний пояс з карате, я добре усвідомив, як часто трапляються падіння і наскільки небезпечними вони можуть бути, коли поруч немає нікого, хто допоможе. Датчик FallSena покликаний пришвидшити цей шлях: він якомога швидше кличе допомогу для користувача, сповіщаючи доглядача через його телефон.</p>
+            <p class="creator__bio">Апаратну частину розроблено так, щоб вона була доступною та надійною. Програмне забезпечення створено для того, щоб і користувачам, і доглядачам було зручно та швидко ним користуватися. В основі FallSena лежить просте переконання: продумані й ефективні технології мають дарувати родинам спокій і допомагати берегти тих, про кого вони піклуються.</p>
+            <p class="creator__contact">
+              <a class="btn btn--primary" href="mailto:osyka.dmytro@gmail.com">Зв’язатися</a>
+            </p>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div>
+        <p class="site-footer__brand">FallSena</p>
+        <p>IoT-виявлення падінь для доглядачів і людей, про яких вони піклуються.</p>
+      </div>
+      <nav aria-label="Навігація у футері">
+        <ul class="site-footer__nav">
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="how-it-works.html">Як це працює</a></li>
+          <li><a href="how-its-made.html">Як це зроблено</a></li>
+          <li><a href="features.html">Можливості</a></li>
+          <li><a href="about.html">Про нас</a></li>
+          <li><a href="contact.html">Контакти</a></li>
+          <li><a href="../about.html" hreflang="en" lang="en">English</a></li>
+          <li><a href="../ru/about.html" hreflang="ru" lang="ru">Русский</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="site-footer__bottom">
+      <div class="container">
+        <p>&copy; 2026 FallSena. IoT-виявлення падінь, що тримає доглядачів на зв’язку.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

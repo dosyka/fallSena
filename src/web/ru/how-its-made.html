@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Как это сделано | FallSena</title>
+  <meta name="description" content="Взгляд за кулисы создания FallSena: моделирование корпуса, разработка собственной печатной платы, её пайка и сборка готового носимого устройства.">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="alternate" hreflang="en" href="../how-its-made.html">
+  <link rel="alternate" hreflang="uk" href="../uk/how-its-made.html">
+  <link rel="alternate" hreflang="ru" href="how-its-made.html">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Основная навигация">
+      <a class="nav__brand" href="index.html">
+        <img class="nav__logo-img" src="../fallsena-icon-light.svg" alt="">
+        <span class="nav__wordmark">Fall<span class="nav__wordmark-accent">Sena</span></span>
+      </a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span class="visually-hidden">Открыть или закрыть меню</span>
+        <span aria-hidden="true">&#9776;</span>
+      </button>
+      <ul class="nav__list" id="primary-nav">
+        <li><a class="nav__link" href="index.html">Главная</a></li>
+        <li><a class="nav__link" href="how-it-works.html">Как это работает</a></li>
+        <li><a class="nav__link" href="how-its-made.html" aria-current="page">Как это сделано</a></li>
+        <li><a class="nav__link" href="features.html">Возможности</a></li>
+        <li><a class="nav__link" href="about.html">О нас</a></li>
+        <li><a class="nav__link" href="contact.html">Контакты</a></li>
+        <li class="nav__langs"><a class="nav__lang" href="../how-its-made.html" hreflang="en" lang="en">EN</a><a class="nav__lang" href="../uk/how-its-made.html" hreflang="uk" lang="uk">УКР</a><span class="nav__lang nav__lang--current" aria-current="true">РУС</span></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section section--tight">
+      <div class="container">
+        <h1 class="section__title">Как создавался FallSena</h1>
+
+        <p class="section__lead">FallSena представляет собой носимое устройство для обнаружения падений, построенное на микроконтроллере ESP32-C6 (Wi-Fi и Bluetooth Low Energy) и датчике движения MPU6050. Оно носится на поясе, отслеживает падения, даёт пользователю короткое окно для отмены ложной тревоги, а если тревогу не отменили, оповещает приложение опекуна на его телефоне.</p>
+        <p>Идея FallSena родилась из тревоги, знакомой многим семьям: что близкий человек может упасть и не получить помощь вовремя. Устройство создано, чтобы сократить это ожидание, как можно скорее уведомляя опекуна через его телефон.</p>
+      </div>
+    </section>
+
+    <section class="section build-section" aria-labelledby="modeling-heading">
+      <div class="container build-section__inner">
+        <div class="build-section__media">
+          <div class="build-gallery">
+            <figure class="build-figure">
+              <img class="build-figure__img build-figure__img--contain" src="../images/caseCAD.png" alt="Рендер открытого основания корпуса FallSena в Fusion 360: видны пустое внутреннее пространство и вырезы в стенках" loading="lazy">
+              <figcaption class="build-figure__label">Основание корпуса, CAD-модель</figcaption>
+            </figure>
+            <figure class="build-figure">
+              <img class="build-figure__img build-figure__img--contain" src="../images/lidCAD.png" alt="Рендер крышки корпуса FallSena в Fusion 360 с логотипом FallSena, отверстием для кнопки SOS и отверстием для кнопки отмены" loading="lazy">
+              <figcaption class="build-figure__label">Крышка корпуса, CAD-модель</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="build-section__content">
+          <h2 id="modeling-heading">3D-моделирование корпуса</h2>
+          <p>Корпус состоит из двух частей: основания, в котором размещается электроника, и крышки, которая его закрывает. В крышке предусмотрены отверстия для кнопки SOS и кнопки отмены (с надписью «ВІДБІЙ»), а весь корпус сделан компактным, чтобы его можно было носить на поясе.</p>
+          <p>Обе части были смоделированы в Fusion 360, причём логотип FallSena и надписи кнопок смоделированы прямо на поверхности крышки.</p>
+          <p>На рендерах обе части показаны в том виде, в каком они были смоделированы: открытое основание корпуса и крышка с отверстиями для кнопок.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section build-section build-section--reverse" aria-labelledby="pcb-heading">
+      <div class="container build-section__inner">
+        <div class="build-section__media">
+          <div class="build-gallery">
+            <figure class="build-figure">
+              <img class="build-figure__img build-figure__img--contain" src="../images/virtualSchematic.png" alt="Принципиальная схема платы FallSena в KiCad, соединяющая модуль ESP32-C6, датчик MPU6050, RGB-светодиод, кнопки и аккумулятор" loading="lazy">
+              <figcaption class="build-figure__label">Принципиальная схема</figcaption>
+            </figure>
+            <figure class="build-figure">
+              <img class="build-figure__img build-figure__img--contain" src="../images/boardLayout.png" alt="Разводка платы в KiCad: показано, где на плате FallSena расположены модуль ESP32-C6, датчик MPU6050, кнопки и RGB-светодиод, а также проложенные между ними дорожки" loading="lazy">
+              <figcaption class="build-figure__label">Разводка платы</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="build-section__content">
+          <h2 id="pcb-heading">Проектирование печатной платы</h2>
+          <p>Собственная печатная плата объединяет все компоненты FallSena на одной плате, размеры которой подобраны так, чтобы она помещалась в основание корпуса, носимого на поясе.</p>
+          <p>В основе платы лежат микроконтроллер ESP32-C6 для Wi-Fi и Bluetooth Low Energy, датчик движения MPU6050, подключённый по I2C, RGB-светодиод состояния, вибромотор монетного типа, кнопка SOS и кнопка отмены, а также LiPo-аккумулятор 3,7 В на 1000 мА·ч со схемой делителя напряжения для измерения уровня заряда.</p>
+          <p>И принципиальная схема, и разводка платы выполнены в KiCad. В разводке компоненты расположены вдоль одной длинной узкой платы, а у каждого её конца находится по кнопке.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section build-section" aria-labelledby="assembly-heading">
+      <div class="container build-section__inner">
+        <div class="build-section__media">
+          <div class="build-gallery">
+            <figure class="build-figure">
+              <img class="build-figure__img" src="../images/bareBoard.jpg" alt="Зелёная печатная плата FallSena до пайки компонентов, с нанесёнными на неё контурами и обозначениями каждого компонента" loading="lazy">
+              <figcaption class="build-figure__label">Чистая плата</figcaption>
+            </figure>
+            <figure class="build-figure">
+              <img class="build-figure__img" src="../images/solderedBoard.jpg" alt="Плата FallSena с припаянными компонентами, среди которых модуль ESP32-C6, датчик MPU6050, красная и серая кнопки, а также красный и чёрный провода аккумулятора" loading="lazy">
+              <figcaption class="build-figure__label">Готовая плата</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="build-section__content">
+          <h2 id="assembly-heading">Пайка и сборка</h2>
+          <p>Ещё до пайки компонентов на чистой плате уже нанесены контуры и обозначения каждого компонента, а также название FallSena.</p>
+          <p>Затем каждый компонент был припаян на своё место, а аккумулятор подключён парой проводов: красным и чёрным.</p>
+          <p>Готовая плата устанавливается в основание корпуса так, что две её кнопки совпадают с отверстиями в крышке.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section build-section build-section--reverse" aria-labelledby="final-heading">
+      <div class="container build-section__inner">
+        <div class="build-section__media">
+          <div class="build-gallery build-gallery--single">
+            <figure class="build-figure">
+              <img class="build-figure__img build-figure__img--natural" src="../images/EncasedDevice.jpg" alt="Собранное устройство FallSena: белый корпус с красной кнопкой SOS, серой кнопкой отмены и логотипом FallSena на крышке" loading="lazy">
+              <figcaption class="build-figure__label">Готовое устройство</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="build-section__content">
+          <h2 id="final-heading">Готовый продукт</h2>
+          <p>В собранном виде FallSena представляет собой небольшое устройство, которое носится на поясе, отслеживает падения, даёт пользователю короткое окно для отмены ложной тревоги, а если тревогу не отменили, оповещает приложение опекуна на его телефоне.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container">
+        <h2 class="section__title">Что дальше</h2>
+
+        <p>Следующий шаг: испытания с контролируемым падением для точной настройки порога обнаружения падений, а также проверка того, что оповещение опекуна приходит за считаные секунды. Кроме того, для продления работы от аккумулятора планируется глубокий сон с пробуждением по движению, а также выпуск приложения опекуна для iOS.</p>
+
+        <p class="mt-lg"><a class="btn btn--primary" href="index.html">На главную</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div>
+        <p class="site-footer__brand">FallSena</p>
+        <p>IoT-обнаружение падений для опекунов и тех, о ком они заботятся.</p>
+      </div>
+      <nav aria-label="Навигация в подвале">
+        <ul class="site-footer__nav">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="how-it-works.html">Как это работает</a></li>
+          <li><a href="how-its-made.html">Как это сделано</a></li>
+          <li><a href="features.html">Возможности</a></li>
+          <li><a href="about.html">О нас</a></li>
+          <li><a href="contact.html">Контакты</a></li>
+          <li><a href="../how-its-made.html" hreflang="en" lang="en">English</a></li>
+          <li><a href="../uk/how-its-made.html" hreflang="uk" lang="uk">Українська</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="site-footer__bottom">
+      <div class="container">
+        <p>&copy; 2026 FallSena. IoT-обнаружение падений, благодаря которому опекуны всегда на связи.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

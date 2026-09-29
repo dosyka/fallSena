@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FallSena: обнаружение падений на базе IoT для вашего спокойствия</title>
+  <meta name="description" content="FallSena: IoT-система обнаружения падений. Устройство на базе ESP32-C6 распознаёт падение и сразу отправляет оповещение на телефон опекуна.">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="alternate" hreflang="en" href="../index.html">
+  <link rel="alternate" hreflang="uk" href="../uk/index.html">
+  <link rel="alternate" hreflang="ru" href="index.html">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Основная навигация">
+      <a class="nav__brand" href="index.html">
+        <img class="nav__logo-img" src="../fallsena-icon-light.svg" alt="">
+        <span class="nav__wordmark">Fall<span class="nav__wordmark-accent">Sena</span></span>
+      </a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span class="visually-hidden">Открыть или закрыть меню</span>
+        <span aria-hidden="true">&#9776;</span>
+      </button>
+      <ul class="nav__list" id="primary-nav">
+        <li><a class="nav__link" href="index.html" aria-current="page">Главная</a></li>
+        <li><a class="nav__link" href="how-it-works.html">Как это работает</a></li>
+        <li><a class="nav__link" href="how-its-made.html">Как это сделано</a></li>
+        <li><a class="nav__link" href="features.html">Возможности</a></li>
+        <li><a class="nav__link" href="about.html">О нас</a></li>
+        <li><a class="nav__link" href="contact.html">Контакты</a></li>
+        <li class="nav__langs"><a class="nav__lang" href="../index.html" hreflang="en" lang="en">EN</a><a class="nav__lang" href="../uk/index.html" hreflang="uk" lang="uk">УКР</a><span class="nav__lang nav__lang--current" aria-current="true">РУС</span></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container">
+        <span class="hero__tag">Обнаружение падений на базе IoT &middot; ESP32-C6</span>
+        <h1>FallSena</h1>
+        <p class="hero__lead">FallSena обнаруживает падения и за считанные секунды оповещает опекунов. Носимое устройство распознаёт падение в тот же момент и отправляет оповещение прямо на телефон опекуна, чтобы он всегда был в курсе происходящего.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="how-it-works.html">Узнать, как это работает</a>
+          <a class="btn btn--ghost" href="features.html">Посмотреть возможности</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">Создано для независимости и безопасности</h2>
+        <p class="section__lead">FallSena объединяет компактный носимый датчик и простое приложение опекуна. Вот что обеспечивает работу системы.</p>
+
+        <div class="grid grid--3 mt-lg">
+          <article class="card">
+            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></div>
+            <h3>Обнаружение в реальном времени</h3>
+            <p>Встроенный акселерометр непрерывно измеряет движение и отмечает резкие удары, похожие на падение.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg></div>
+            <h3>Мгновенные оповещения</h3>
+            <p>Когда падение обнаружено, push-уведомление приходит на телефон опекуна за считанные секунды.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="6" width="18" height="12" rx="2" ry="2"></rect><line x1="23" y1="13" x2="23" y2="11"></line></svg></div>
+            <h3>Низкое энергопотребление</h3>
+            <p>Экономичная прошивка позволяет устройству работать несколько дней от одной зарядки, а уровень заряда аккумулятора всегда на виду.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div>
+        <p class="site-footer__brand">FallSena</p>
+        <p>Обнаружение падений на базе IoT для опекунов и тех, о ком они заботятся.</p>
+      </div>
+      <nav aria-label="Навигация в подвале">
+        <ul class="site-footer__nav">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="how-it-works.html">Как это работает</a></li>
+          <li><a href="how-its-made.html">Как это сделано</a></li>
+          <li><a href="features.html">Возможности</a></li>
+          <li><a href="about.html">О нас</a></li>
+          <li><a href="contact.html">Контакты</a></li>
+          <li><a href="../index.html" hreflang="en" lang="en">English</a></li>
+          <li><a href="../uk/index.html" hreflang="uk" lang="uk">Українська</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="site-footer__bottom">
+      <div class="container">
+        <p>&copy; 2026 FallSena. Обнаружение падений на базе IoT, благодаря которому опекуны всегда на связи.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

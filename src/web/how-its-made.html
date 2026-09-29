@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How It's Made | FallSena</title>
+  <meta name="description" content="A behind the scenes look at how FallSena was built: modeling the enclosure, designing a custom circuit board, soldering it, and assembling the finished wearable.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="alternate" hreflang="en" href="how-its-made.html">
+  <link rel="alternate" hreflang="uk" href="uk/how-its-made.html">
+  <link rel="alternate" hreflang="ru" href="ru/how-its-made.html">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a class="nav__brand" href="index.html">
+        <img class="nav__logo-img" src="fallsena-icon-light.svg" alt="">
+        <span class="nav__wordmark">Fall<span class="nav__wordmark-accent">Sena</span></span>
+      </a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span class="visually-hidden">Toggle navigation menu</span>
+        <span aria-hidden="true">&#9776;</span>
+      </button>
+      <ul class="nav__list" id="primary-nav">
+        <li><a class="nav__link" href="index.html">Home</a></li>
+        <li><a class="nav__link" href="how-it-works.html">How It Works</a></li>
+        <li><a class="nav__link" href="how-its-made.html" aria-current="page">How It's Made</a></li>
+        <li><a class="nav__link" href="features.html">Features</a></li>
+        <li><a class="nav__link" href="about.html">About</a></li>
+        <li><a class="nav__link" href="contact.html">Contact</a></li>
+        <li class="nav__langs"><span class="nav__lang nav__lang--current" aria-current="true">EN</span><a class="nav__lang" href="uk/how-its-made.html" hreflang="uk" lang="uk">УКР</a><a class="nav__lang" href="ru/how-its-made.html" hreflang="ru" lang="ru">РУС</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section section--tight">
+      <div class="container">
+        <h1 class="section__title">How FallSena is made</h1>
+
+        <p class="section__lead">FallSena is a wearable fall detection device built around an ESP32-C6 microcontroller (Wi-Fi and Bluetooth Low Energy) and an MPU6050 motion sensor. It is worn at the waist, watches for a fall, gives the wearer a short window to cancel a false alarm, and otherwise alerts a caretaker's phone app.</p>
+        <p>FallSena started from a worry many families share: that a loved one may fall and not get help in time. It is designed to shorten that wait by notifying the caretaker through their phone as soon as possible.</p>
+      </div>
+    </section>
+
+    <section class="section build-section" aria-labelledby="modeling-heading">
+      <div class="container build-section__inner">
+        <div class="build-section__media">
+          <div class="build-gallery">
+            <figure class="build-figure">
+              <img class="build-figure__img build-figure__img--contain" src="images/caseCAD.png" alt="Fusion 360 render of the open FallSena enclosure case, showing its empty interior and the cutouts in its walls" loading="lazy">
+              <figcaption class="build-figure__label">Enclosure case, CAD model</figcaption>
+            </figure>
+            <figure class="build-figure">
+              <img class="build-figure__img build-figure__img--contain" src="images/lidCAD.png" alt="Fusion 360 render of the FallSena enclosure lid with the FallSena logo, an SOS button opening, and a Cancel button opening" loading="lazy">
+              <figcaption class="build-figure__label">Enclosure lid, CAD model</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="build-section__content">
+          <h2 id="modeling-heading">3D modeling the enclosure</h2>
+          <p>The enclosure is made of two parts: a case that holds the electronics and a lid that closes over it. The lid has openings for the SOS and Cancel buttons, and the whole enclosure is kept compact so it can be worn at the waist.</p>
+          <p>Both parts were 3D-modeled in Fusion 360, with the FallSena logo and button labels modeled directly into the surface of the lid.</p>
+          <p>The renders show the two parts as modeled: the open case, and the lid with its button openings.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section build-section build-section--reverse" aria-labelledby="pcb-heading">
+      <div class="container build-section__inner">
+        <div class="build-section__media">
+          <div class="build-gallery">
+            <figure class="build-figure">
+              <img class="build-figure__img build-figure__img--contain" src="images/virtualSchematic.png" alt="KiCad schematic of the FallSena board, connecting the ESP32-C6 module, MPU6050 sensor, RGB LED, buttons, and battery" loading="lazy">
+              <figcaption class="build-figure__label">Schematic diagram</figcaption>
+            </figure>
+            <figure class="build-figure">
+              <img class="build-figure__img build-figure__img--contain" src="images/boardLayout.png" alt="KiCad board layout showing where the ESP32-C6 module, MPU6050 sensor, buttons, and RGB LED sit on the FallSena board, with traces routed between them" loading="lazy">
+              <figcaption class="build-figure__label">Board layout</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="build-section__content">
+          <h2 id="pcb-heading">PCB design</h2>
+          <p>A custom circuit board puts all of FallSena's parts on one board, sized to fit inside the waist-worn case.</p>
+          <p>The board is built around an ESP32-C6 microcontroller for Wi-Fi and Bluetooth Low Energy, an MPU6050 motion sensor connected over I2C, an RGB status LED, a coin vibration motor, SOS and Cancel buttons, and a 3.7V 1000 mAh LiPo battery with a voltage-divider circuit for battery-level sensing.</p>
+          <p>Both the schematic and the board layout were designed in KiCad. In the layout, the parts are arranged along one long, narrow board with a button near each end.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section build-section" aria-labelledby="assembly-heading">
+      <div class="container build-section__inner">
+        <div class="build-section__media">
+          <div class="build-gallery">
+            <figure class="build-figure">
+              <img class="build-figure__img" src="images/bareBoard.jpg" alt="The green FallSena circuit board before any parts were soldered on, with the outline and label of each part printed on it" loading="lazy">
+              <figcaption class="build-figure__label">Bare board</figcaption>
+            </figure>
+            <figure class="build-figure">
+              <img class="build-figure__img" src="images/solderedBoard.jpg" alt="The FallSena board with its parts soldered on, including the ESP32-C6 module, the MPU6050 sensor, a red and a grey button, and red and black battery leads" loading="lazy">
+              <figcaption class="build-figure__label">Finished board</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="build-section__content">
+          <h2 id="assembly-heading">Soldering and assembly</h2>
+          <p>Before any parts were soldered on, the bare board already shows the outline and label for each part, along with the FallSena name.</p>
+          <p>Each part was then soldered into its place, with the battery connected by a pair of red and black leads.</p>
+          <p>The finished board goes into the case, with its two buttons lining up with the openings in the lid.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section build-section build-section--reverse" aria-labelledby="final-heading">
+      <div class="container build-section__inner">
+        <div class="build-section__media">
+          <div class="build-gallery build-gallery--single">
+            <figure class="build-figure">
+              <img class="build-figure__img build-figure__img--natural" src="images/EncasedDevice.jpg" alt="The assembled FallSena device: a white enclosure with a red SOS button, a grey Cancel button, and the FallSena logo on the lid" loading="lazy">
+              <figcaption class="build-figure__label">Finished device</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="build-section__content">
+          <h2 id="final-heading">The final product</h2>
+          <p>Once assembled, FallSena is a small device worn at the waist that watches for a fall, gives the wearer a short window to cancel a false alarm, and otherwise alerts a caretaker's phone app.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container">
+        <h2 class="section__title">What's next</h2>
+
+        <p>Next up is controlled-drop testing to fine-tune the fall detection threshold, along with verifying that the caretaker alert arrives within seconds. Deep sleep with motion wake-up is planned to extend battery life, as is bringing the caretaker app to iOS.</p>
+
+        <p class="mt-lg"><a class="btn btn--primary" href="index.html">Back to home</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div>
+        <p class="site-footer__brand">FallSena</p>
+        <p>IoT fall detection for caretakers and the people they look after.</p>
+      </div>
+      <nav aria-label="Footer">
+        <ul class="site-footer__nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="how-its-made.html">How It's Made</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="uk/how-its-made.html" hreflang="uk" lang="uk">Українська</a></li>
+          <li><a href="ru/how-its-made.html" hreflang="ru" lang="ru">Русский</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="site-footer__bottom">
+      <div class="container">
+        <p>&copy; 2026 FallSena. IoT fall detection that keeps caretakers connected.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

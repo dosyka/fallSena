@@ -1,0 +1,21 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+.claude/
+
+# ESP-IDF / PlatformIO firmware
+firmware/build/
+firmware/.pio/
+**/sdkconfig.old
+
+# Node / mobile app
+node_modules/
+phoneApp/build/
+
+# Secrets — Wi-Fi creds, push keys, etc.
+*.env
+secrets.h
