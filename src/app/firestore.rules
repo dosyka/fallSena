@@ -1,0 +1,151 @@
+rules_version = '2';
+
+// FallSena Firestore security rules.
+//
+// These enforce the data model in DATA_MODEL.md. Design principles:
+//   - A user reads/writes only their own account doc + FCM tokens.
+//   - A faller owns devices and produces events for their own device.
+//   - A caretaker gets READ access to a faller's devices/events ONLY through
+//     an *accepted* link (the pairing edge). The single exception is the
+//     narrowly-scoped event acknowledgement (see /events below).
+//   - Linking requires both parties: one creates a pending link, the other
+//     accepts it.
+//
+// NOTE: the Cloud Function that sends pushes uses the Admin SDK, which bypasses
+// these rules — so cross-user display-name / token reads for the push are NOT
+// granted here on purpose (least privilege for the client apps).
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ---- helpers ---------------------------------------------------------
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isSelf(uid) {
+      return isSignedIn() && request.auth.uid == uid;
+    }
+
+    // The link doc ID is the deterministic composite "{fallerId}_{caretakerId}"
+    // (see DATA_MODEL.md), so we can get() the exact doc that would authorize
+    // the current caretaker for a given faller. Returns true only for an
+    // ACCEPTED link.
+    function isLinkedCaretaker(fallerId) {
+      let linkId = fallerId + '_' + request.auth.uid;
+      let linkPath = /databases/$(database)/documents/links/$(linkId);
+      return isSignedIn()
+        && exists(linkPath)
+        && get(linkPath).data.status == 'accepted';
+    }
+
+    // Owner UID of a device, read from the stored doc.
+    function deviceOwner(deviceId) {
+      return get(/databases/$(database)/documents/devices/$(deviceId)).data.ownerId;
+    }
+
+    // ---- users -----------------------------------------------------------
+    // Model: users/{uid}. A user may read/write ONLY their own doc.
+    match /users/{userId} {
+      allow read, write: if isSelf(userId);
+
+      // Model: users/{uid}/fcmTokens/{token}. Rotating FCM tokens, one doc per
+      // token. Only the owning user can manage their tokens.
+      match /fcmTokens/{tokenId} {
+        allow read, write: if isSelf(userId);
+      }
+    }
+
+    // ---- devices ---------------------------------------------------------
+    // Model: devices/{deviceId}, owned by a faller (ownerId). Status fields
+    // (batteryPct/charging/online/lastSeen) are relayed by the faller app.
+    match /devices/{deviceId} {
+      // Owner reads their own device; a linked-accepted caretaker may READ it
+      // (cloud-relayed status) but never write.
+      // resource == null permits the read-before-create get() during
+      // first-time device registration (non-existent doc leaks nothing).
+      allow read: if resource == null
+                  || isSelf(resource.data.ownerId)
+                  || isLinkedCaretaker(resource.data.ownerId);
+
+      // Only the owner (a faller) may create their device; ownerId must be self.
+      allow create: if isSelf(request.resource.data.ownerId);
+
+      // Only the owner may update/delete; ownership is immutable.
+      allow update: if isSelf(resource.data.ownerId)
+                    && request.resource.data.ownerId == resource.data.ownerId;
+      allow delete: if isSelf(resource.data.ownerId);
+    }
+
+    // ---- links (caretaker <-> faller pairing) ----------------------------
+    // Model: links/{linkId} where linkId == "{fallerId}_{caretakerId}".
+    // Linking requires BOTH parties: one creates pending, the other accepts.
+    match /links/{linkId} {
+
+      function isParty(data) {
+        return isSignedIn()
+          && (request.auth.uid == data.fallerId
+              || request.auth.uid == data.caretakerId);
+      }
+
+      // Either named party may read the link.
+      allow read: if isParty(resource.data);
+
+      // Create a pending request. The doc ID must be the deterministic
+      // composite, the creator must be one of the two parties and must be
+      // recorded as createdBy, and it must start pending.
+      allow create: if isParty(request.resource.data)
+        && request.resource.data.createdBy == request.auth.uid
+        && linkId == request.resource.data.fallerId + '_' + request.resource.data.caretakerId
+        && request.resource.data.status == 'pending';
+
+      // Accept: the OTHER party (not the creator) flips pending -> accepted.
+      // The parties and createdBy are immutable; status may only advance to
+      // accepted.
+      allow update: if isParty(resource.data)
+        && request.auth.uid != resource.data.createdBy
+        && resource.data.status == 'pending'
+        && request.resource.data.status == 'accepted'
+        && request.resource.data.fallerId == resource.data.fallerId
+        && request.resource.data.caretakerId == resource.data.caretakerId
+        && request.resource.data.createdBy == resource.data.createdBy;
+
+      // Either party may unpair.
+      allow delete: if isParty(resource.data);
+    }
+
+    // ---- events (fall events) --------------------------------------------
+    // Model: events/{eventId}. Written by the faller app on a confirmed fall;
+    // this create is the trigger for the notification Cloud Function.
+    match /events/{eventId} {
+
+      // Create only by the faller, for their OWN device: the writer must be the
+      // event subject (userId) AND own the referenced device. New events start
+      // as status "new".
+      allow create: if isSelf(request.resource.data.userId)
+        && deviceOwner(request.resource.data.deviceId) == request.auth.uid
+        && request.resource.data.status == 'new';
+
+      // Read by the faller (subject) or a linked-accepted caretaker.
+      allow read: if isSelf(resource.data.userId)
+                  || isLinkedCaretaker(resource.data.userId);
+
+      // Write exception: a caretaker generally may NOT write events. The single
+      // permitted write is the acknowledgement transition (new -> acknowledged)
+      // by a linked-accepted caretaker, who stamps acknowledgedBy = self. All
+      // other fields are immutable, so this cannot alter event content.
+      allow update: if isLinkedCaretaker(resource.data.userId)
+        && resource.data.status == 'new'
+        && request.resource.data.status == 'acknowledged'
+        && request.resource.data.acknowledgedBy == request.auth.uid
+        && request.resource.data.userId == resource.data.userId
+        && request.resource.data.deviceId == resource.data.deviceId
+        && request.resource.data.type == resource.data.type
+        && request.resource.data.ts == resource.data.ts;
+
+      // Events are never deleted from the app (audit/history).
+      allow delete: if false;
+    }
+  }
+}

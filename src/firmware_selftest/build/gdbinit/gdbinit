@@ -1,0 +1,2 @@
+source /home/home/Documents/fallSena/src/firmware_selftest/build/gdbinit/symbols
+source /home/home/Documents/fallSena/src/firmware_selftest/build/gdbinit/connect

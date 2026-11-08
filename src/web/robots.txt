@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /how-its-made-TEMPLATE-GUIDE.md
+
+Sitemap: https://fallsena.com/sitemap.xml

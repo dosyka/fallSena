@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Новости и обновления разработки | FallSena</title>
+  <meta name="description" content="Новости и обновления о разработке FallSena, носимого IoT-устройства обнаружения падений, которое оповещает приложение на телефоне опекуна при падении.">
+  <meta name="theme-color" content="#070c18">
+  <link rel="icon" type="image/svg+xml" href="../fallsena-icon.svg">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="canonical" href="https://fallsena.com/ru/news.html">
+  <link rel="alternate" hreflang="en" href="https://fallsena.com/news.html">
+  <link rel="alternate" hreflang="uk" href="https://fallsena.com/uk/news.html">
+  <link rel="alternate" hreflang="ru" href="https://fallsena.com/ru/news.html">
+  <link rel="alternate" hreflang="x-default" href="https://fallsena.com/news.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FallSena">
+  <meta property="og:title" content="Новости и обновления разработки | FallSena">
+  <meta property="og:description" content="Новости и обновления о разработке FallSena, носимого IoT-устройства обнаружения падений, которое оповещает приложение на телефоне опекуна при падении.">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="uk_UA">
+  <meta property="og:url" content="https://fallsena.com/ru/news.html">
+  <meta property="og:image" content="https://fallsena.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Логотип FallSena с подписью IoT Fall Detection на тёмном фоне">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://fallsena.com/images/og-image.png">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Основная навигация">
+      <a class="nav__brand" href="index.html">
+        <img class="nav__logo-img" src="../fallsena-icon-light.svg" alt="">
+        <span class="nav__wordmark">Fall<span class="nav__wordmark-accent">Sena</span></span>
+      </a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span class="visually-hidden">Открыть или закрыть меню</span>
+        <span aria-hidden="true">&#9776;</span>
+      </button>
+      <ul class="nav__list" id="primary-nav">
+        <li><a class="nav__link" href="index.html">Главная</a></li>
+        <li><a class="nav__link" href="how-it-works.html">Как это работает</a></li>
+        <li><a class="nav__link" href="how-its-made.html">Как это сделано</a></li>
+        <li><a class="nav__link" href="news.html" aria-current="page">Новости</a></li>
+        <li><a class="nav__link" href="features.html">Возможности</a></li>
+        <li><a class="nav__link" href="about.html">О нас</a></li>
+        <li><a class="nav__link" href="contact.html">Контакты</a></li>
+        <li class="nav__langs"><a class="nav__lang" href="../news.html" hreflang="en" lang="en">EN</a><a class="nav__lang" href="../uk/news.html" hreflang="uk" lang="uk">УКР</a><span class="nav__lang nav__lang--current" aria-current="true">РУС</span></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <h1 class="section__title">Новости</h1>
+        <p class="section__lead">Обновления о разработке FallSena.</p>
+
+        <!-- NEWS-SLOT: how to use this page.
+             Each post is one <article class="card news-card"> inside .news-list, newest first.
+             Fill in a slot by replacing every [bracketed] value:
+               - date: set datetime="YYYY-MM-DD" (machine-readable) and the visible date text
+               - title, body: replace the bracketed text
+               - image (optional): replace the placeholder div inside <figure class="news-card__media">
+                 with an <img>, or delete the whole <figure> if the post has no image
+             Delete any slot you do not need. To add a post, copy the snippet at the bottom of this list.
+             Remove the NEWS-SLOT comments of a slot once it is filled. -->
+        <div class="news-list mt-lg">
+
+          <!-- NEWS-SLOT: post-1 (example post WITH an optional image) -->
+          <article class="card news-card">
+            <figure class="news-card__media">
+              <!-- NEWS-SLOT: post-1-image. Replace the div below with
+                   <img class="news-card__img" src="../images/FILE.jpg" alt="[Описание изображения]" loading="lazy">
+                   or delete this whole figure if the post has no image. -->
+              <div class="news-card__placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="M21 15l-5-5L5 21"></path></svg>
+                <span>[Необязательное изображение]</span>
+              </div>
+            </figure>
+            <div class="news-card__body">
+              <!-- NEWS-SLOT: post-1-date -->
+              <time class="news-card__date" datetime="">[ГГГГ-ММ-ДД]</time>
+              <!-- NEWS-SLOT: post-1-title -->
+              <h2 class="news-card__title">[Заголовок публикации]</h2>
+              <!-- NEWS-SLOT: post-1-body -->
+              <p>[Краткий текст публикации: одно-два предложения об обновлении.]</p>
+            </div>
+          </article>
+
+          <!-- NEWS-SLOT: post-2 (example post WITHOUT an image) -->
+          <article class="card news-card">
+            <div class="news-card__body">
+              <!-- NEWS-SLOT: post-2-date -->
+              <time class="news-card__date" datetime="">[ГГГГ-ММ-ДД]</time>
+              <!-- NEWS-SLOT: post-2-title -->
+              <h2 class="news-card__title">[Заголовок публикации]</h2>
+              <!-- NEWS-SLOT: post-2-body -->
+              <p>[Краткий текст публикации: одно-два предложения об обновлении.]</p>
+            </div>
+          </article>
+
+          <!-- NEWS-SLOT: copyable post-card snippet. Copy everything between the two marker lines,
+               paste it at the TOP of .news-list (newest first), and fill in the values.
+               Remove the <figure> block if the post has no image.
+          ===== START POST =====
+          <article class="card news-card">
+            <figure class="news-card__media">
+              <img class="news-card__img" src="../images/FILE.jpg" alt="[Описание изображения]" loading="lazy">
+            </figure>
+            <div class="news-card__body">
+              <time class="news-card__date" datetime="YYYY-MM-DD">[ГГГГ-ММ-ДД]</time>
+              <h2 class="news-card__title">[Заголовок публикации]</h2>
+              <p>[Краткий текст публикации: одно-два предложения об обновлении.]</p>
+            </div>
+          </article>
+          ===== END POST ===== -->
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div>
+        <p class="site-footer__brand">FallSena</p>
+        <p>Обнаружение падений на базе IoT для опекунов и тех, о ком они заботятся.</p>
+      </div>
+      <nav aria-label="Навигация в нижней части страницы">
+        <ul class="site-footer__nav">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="how-it-works.html">Как это работает</a></li>
+          <li><a href="how-its-made.html">Как это сделано</a></li>
+          <li><a href="news.html">Новости</a></li>
+          <li><a href="features.html">Возможности</a></li>
+          <li><a href="about.html">О нас</a></li>
+          <li><a href="contact.html">Контакты</a></li>
+          <li><a href="../news.html" hreflang="en" lang="en">English</a></li>
+          <li><a href="../uk/news.html" hreflang="uk" lang="uk">Українська</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="site-footer__bottom">
+      <div class="container">
+        <p>&copy; 2026 FallSena. Обнаружение падений на базе IoT, благодаря которому опекуны всегда на связи.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+Command: ninja flash
+[1/5] cd /home/home/Documents/fallSena/src/firmware_datalog/build && /home/home/.espressif/python_env/idf6.2_py3.14_env/bin/python /home/home/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/home/Documents/fallSena/src/firmware_datalog/build/partition_table/partition-table.bin /home/home/Documents/fallSena/src/firmware_datalog/build/fallsena_datalog.bin
+fallsena_datalog.bin binary size 0xe99c0 bytes. Smallest app partition is 0x100000 bytes. 0x16640 bytes (9%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] cd /home/home/Documents/fallSena/src/firmware_datalog/build/bootloader && /home/home/.espressif/python_env/idf6.2_py3.14_env/bin/python /home/home/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/home/Documents/fallSena/src/firmware_datalog/build/bootloader/bootloader.bin
+Bootloader binary size 0x5610 bytes. 0x29f0 bytes (33%) free.
+[3/5] No install step for 'bootloader'
+[4/5] Completed 'bootloader'
+[4/5] Running utility command for flash
+esptool --chip esp32c6 -p /dev/ttyACM0 -b 460800 --before=default-reset --after=hard-reset write-flash --flash-mode dio --flash-freq 80m --flash-size 2MB 0x0 bootloader/bootloader.bin 0x8000 partition_table/partition-table.bin 0x10000 fallsena_datalog.bin --skip-flashed
+esptool v5.3.1
+Serial port /dev/ttyACM0:
+FAILED: [code=1] CMakeFiles/flash.util 
+cd /home/home/Documents/fallSena/src/firmware_datalog && /usr/bin/cmake -D IDF_PATH=/home/home/esp/esp-idf -D "SERIAL_TOOL=/home/home/.espressif/python_env/idf6.2_py3.14_env/bin/python;-m;esptool;--chip;esp32c6" -D "SERIAL_TOOL_ARGS=--before=default-reset;--after=hard-reset;write-flash;@flash_args" -D SERIAL_TOOL_IS_WRITE_FLASH=1 -D SERIAL_TOOL_FLASH_ARGS_FILE=flash_args -D WORKING_DIRECTORY=/home/home/Documents/fallSena/src/firmware_datalog/build -P /home/home/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+ninja: build stopped: subcommand failed.

@@ -3,12 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FallSena: обнаружение падений на базе IoT для вашего спокойствия</title>
-  <meta name="description" content="FallSena: IoT-система обнаружения падений. Устройство на базе ESP32-C6 распознаёт падение и сразу отправляет оповещение на телефон опекуна.">
+  <title>FallSena: IoT-обнаружение падений для вашего спокойствия</title>
+  <meta name="description" content="FallSena: IoT-система обнаружения падений. Устройство на ESP32-C6 распознаёт падение и за считанные секунды оповещает опекуна через телефон пользователя.">
+  <meta name="theme-color" content="#070c18">
+  <link rel="icon" type="image/svg+xml" href="../fallsena-icon.svg">
   <link rel="stylesheet" href="../css/styles.css">
-  <link rel="alternate" hreflang="en" href="../index.html">
-  <link rel="alternate" hreflang="uk" href="../uk/index.html">
-  <link rel="alternate" hreflang="ru" href="index.html">
+  <link rel="canonical" href="https://fallsena.com/ru/">
+  <link rel="alternate" hreflang="en" href="https://fallsena.com/">
+  <link rel="alternate" hreflang="uk" href="https://fallsena.com/uk/">
+  <link rel="alternate" hreflang="ru" href="https://fallsena.com/ru/">
+  <link rel="alternate" hreflang="x-default" href="https://fallsena.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FallSena">
+  <meta property="og:title" content="FallSena: IoT-обнаружение падений для вашего спокойствия">
+  <meta property="og:description" content="FallSena: IoT-система обнаружения падений. Устройство на ESP32-C6 распознаёт падение и за считанные секунды оповещает опекуна через телефон пользователя.">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="uk_UA">
+  <meta property="og:url" content="https://fallsena.com/ru/">
+  <meta property="og:image" content="https://fallsena.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Логотип FallSena с подписью IoT Fall Detection на тёмном фоне">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://fallsena.com/images/og-image.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://fallsena.com/#organization",
+        "name": "FallSena",
+        "url": "https://fallsena.com/",
+        "logo": "https://fallsena.com/images/og-image.png"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://fallsena.com/ru/#website",
+        "name": "FallSena",
+        "url": "https://fallsena.com/ru/",
+        "inLanguage": "ru",
+        "publisher": {
+          "@id": "https://fallsena.com/#organization"
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Перейти к основному содержимому</a>
@@ -27,6 +69,7 @@
         <li><a class="nav__link" href="index.html" aria-current="page">Главная</a></li>
         <li><a class="nav__link" href="how-it-works.html">Как это работает</a></li>
         <li><a class="nav__link" href="how-its-made.html">Как это сделано</a></li>
+        <li><a class="nav__link" href="news.html">Новости</a></li>
         <li><a class="nav__link" href="features.html">Возможности</a></li>
         <li><a class="nav__link" href="about.html">О нас</a></li>
         <li><a class="nav__link" href="contact.html">Контакты</a></li>
@@ -40,7 +83,7 @@
       <div class="container">
         <span class="hero__tag">Обнаружение падений на базе IoT &middot; ESP32-C6</span>
         <h1>FallSena</h1>
-        <p class="hero__lead">FallSena обнаруживает падения и за считанные секунды оповещает опекунов. Носимое устройство распознаёт падение в тот же момент и отправляет оповещение прямо на телефон опекуна, чтобы он всегда был в курсе происходящего.</p>
+        <p class="hero__lead">FallSena обнаруживает падения и за считанные секунды оповещает опекунов. Носимое устройство распознаёт падение в тот же момент и отправляет оповещение через телефон пользователя на телефон опекуна, чтобы он всегда был в курсе происходящего.</p>
         <div class="hero__actions">
           <a class="btn btn--primary" href="how-it-works.html">Узнать, как это работает</a>
           <a class="btn btn--ghost" href="features.html">Посмотреть возможности</a>
@@ -80,11 +123,12 @@
         <p class="site-footer__brand">FallSena</p>
         <p>Обнаружение падений на базе IoT для опекунов и тех, о ком они заботятся.</p>
       </div>
-      <nav aria-label="Навигация в подвале">
+      <nav aria-label="Навигация в нижней части страницы">
         <ul class="site-footer__nav">
           <li><a href="index.html">Главная</a></li>
           <li><a href="how-it-works.html">Как это работает</a></li>
           <li><a href="how-its-made.html">Как это сделано</a></li>
+          <li><a href="news.html">Новости</a></li>
           <li><a href="features.html">Возможности</a></li>
           <li><a href="about.html">О нас</a></li>
           <li><a href="contact.html">Контакты</a></li>

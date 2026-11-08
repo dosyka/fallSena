@@ -1,0 +1,22 @@
+Command: ninja all
+[1/12] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/button.c.obj
+[2/12] Performing build step for 'bootloader'
+[1/1] cd /home/home/Documents/fallSena/src/firmware_datalog/build/bootloader && /home/home/.espressif/python_env/idf6.2_py3.14_env/bin/python /home/home/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/home/Documents/fallSena/src/firmware_datalog/build/bootloader/bootloader.bin
+Bootloader binary size 0x5610 bytes. 0x29f0 bytes (33%) free.
+[3/12] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/rgb_led.c.obj
+[4/12] No install step for 'bootloader'
+[5/12] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/vibration.c.obj
+[6/12] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/mpu6050.c.obj
+[7/12] Completed 'bootloader'
+[8/12] Linking C static library esp-idf/main/libmain.a
+[9/12] Generating esp-idf/esp_system/ld/sections.ld
+Skipping linker script generation, section names unchanged
+[10/12] Linking CXX executable fallsena_datalog.elf
+[11/12] Generating binary image from built executable
+esptool v5.3.1
+Creating ESP32-C6 image...
+Merged 3 ELF sections.
+Successfully created ESP32-C6 image.
+Generated /home/home/Documents/fallSena/src/firmware_datalog/build/fallsena_datalog.bin
+[12/12] cd /home/home/Documents/fallSena/src/firmware_datalog/build && /home/home/.espressif/python_env/idf6.2_py3.14_env/bin/python /home/home/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/home/Documents/fallSena/src/firmware_datalog/build/partition_table/partition-table.bin /home/home/Documents/fallSena/src/firmware_datalog/build/fallsena_datalog.bin
+fallsena_datalog.bin binary size 0xe99c0 bytes. Smallest app partition is 0x100000 bytes. 0x16640 bytes (9%) free.

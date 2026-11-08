@@ -1,0 +1,4 @@
+-march=rv32imac_zicsr_zifencei
+-specs=picolibc.specs
+-fno-rtti
+-ftrivial-auto-var-init=uninitialized

@@ -1,0 +1,3 @@
+# Default sdkconfig values for the FallSena hardware self-test firmware.
+# Target chip: ESP32-C6.
+CONFIG_IDF_TARGET="esp32c6"

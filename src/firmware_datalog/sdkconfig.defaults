@@ -1,0 +1,12 @@
+# Default sdkconfig values for the FallSena DATA-LOGGING firmware.
+# Target chip: ESP32-C6.
+CONFIG_IDF_TARGET="esp32c6"
+
+# WiFi (station mode) is required to flush trials to the host PC over TCP.
+# The ESP32-C6 WiFi stack is enabled by default in IDF; these keep the
+# connection robust for bursty trial dumps.
+CONFIG_ESP_WIFI_ENABLED=y
+
+# Slightly larger main task stack: the recording state machine plus the
+# blocking TCP flush of up to thousands of CSV lines runs in app_main.
+CONFIG_ESP_MAIN_TASK_STACK_SIZE=6144

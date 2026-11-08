@@ -1,0 +1,10 @@
+idf_component_register(SRCS "main.c"
+                            "mpu6050.c"
+                            "rgb_led.c"
+                            "vibration.c"
+                            "button.c"
+                            "battery.c"
+                            "fall_detector.c"
+                            "ble_service.c"
+                       INCLUDE_DIRS "."
+                       REQUIRES esp_driver_i2c esp_driver_ledc esp_driver_gpio esp_timer esp_adc bt nvs_flash)

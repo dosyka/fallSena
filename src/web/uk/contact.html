@@ -4,11 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Контакти та підтримка | FallSena</title>
-  <meta name="description" content="Контакти та підтримка FallSena. Скористайтеся тимчасовою контактною формою або наведеними нижче контактами підтримки, щоб зв’язатися з нами.">
+  <meta name="description" content="Зв’яжіться з підтримкою FallSena поштою або надішліть запит на замовлення пристрою виявлення падінь. Тут контакти підтримки. Відповідаємо за два робочі дні.">
+  <meta name="theme-color" content="#070c18">
+  <link rel="icon" type="image/svg+xml" href="../fallsena-icon.svg">
   <link rel="stylesheet" href="../css/styles.css">
-  <link rel="alternate" hreflang="en" href="../contact.html">
-  <link rel="alternate" hreflang="uk" href="contact.html">
-  <link rel="alternate" hreflang="ru" href="../ru/contact.html">
+  <link rel="canonical" href="https://fallsena.com/uk/contact.html">
+  <link rel="alternate" hreflang="en" href="https://fallsena.com/contact.html">
+  <link rel="alternate" hreflang="uk" href="https://fallsena.com/uk/contact.html">
+  <link rel="alternate" hreflang="ru" href="https://fallsena.com/ru/contact.html">
+  <link rel="alternate" hreflang="x-default" href="https://fallsena.com/contact.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FallSena">
+  <meta property="og:title" content="Контакти та підтримка | FallSena">
+  <meta property="og:description" content="Зв’яжіться з підтримкою FallSena поштою або надішліть запит на замовлення пристрою виявлення падінь. Тут контакти підтримки. Відповідаємо за два робочі дні.">
+  <meta property="og:locale" content="uk_UA">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="ru_RU">
+  <meta property="og:url" content="https://fallsena.com/uk/contact.html">
+  <meta property="og:image" content="https://fallsena.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Логотип FallSena з підписом IoT Fall Detection на темному тлі">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://fallsena.com/images/og-image.png">
 </head>
 <body>
   <a class="skip-link" href="#main">Перейти до основного вмісту</a>
@@ -27,6 +45,7 @@
         <li><a class="nav__link" href="index.html">Головна</a></li>
         <li><a class="nav__link" href="how-it-works.html">Як це працює</a></li>
         <li><a class="nav__link" href="how-its-made.html">Як це зроблено</a></li>
+        <li><a class="nav__link" href="news.html">Новини</a></li>
         <li><a class="nav__link" href="features.html">Можливості</a></li>
         <li><a class="nav__link" href="about.html">Про нас</a></li>
         <li><a class="nav__link" href="contact.html" aria-current="page">Контакти</a></li>
@@ -80,6 +99,39 @@
             </ul>
           </div>
         </div>
+
+        <section class="card order-card mt-lg" id="order" aria-labelledby="order-heading">
+          <h2 id="order-heading">Замовити пристрій</h2>
+          <p>Заповніть форму, і ми зв’яжемося з вами електронною поштою, щоб підтвердити деталі.</p>
+          <form class="form mt-lg" aria-label="Форма замовлення" onsubmit="return false;">
+            <div class="form__group">
+              <label for="order-name">Ім’я</label>
+              <input type="text" id="order-name" name="order-name" autocomplete="name" placeholder="Ваше ім’я" required>
+            </div>
+            <div class="form__group">
+              <label for="order-email">Електронна пошта</label>
+              <input type="email" id="order-email" name="order-email" autocomplete="email" placeholder="you@example.com" required>
+            </div>
+            <div class="form__group">
+              <label for="order-phone">Телефон (необов’язково)</label>
+              <input type="tel" id="order-phone" name="order-phone" autocomplete="tel" placeholder="Ваш номер телефону">
+            </div>
+            <div class="form__group">
+              <label for="order-quantity">Кількість</label>
+              <input type="number" id="order-quantity" name="order-quantity" min="1" step="1" value="1" inputmode="numeric">
+            </div>
+            <div class="form__group">
+              <label for="order-shipping">Країна та місто доставки</label>
+              <input type="text" id="order-shipping" name="order-shipping" placeholder="Країна, місто">
+            </div>
+            <div class="form__group">
+              <label for="order-notes">Примітки</label>
+              <textarea id="order-notes" name="order-notes" rows="4" placeholder="Що нам варто знати про ваше замовлення?"></textarea>
+            </div>
+            <button class="btn btn--primary" type="submit">Замовити</button>
+            <p class="form__note">Зручніше електронною поштою? Надішліть запит на замовлення на <a href="mailto:osyka.dmytro@gmail.com">osyka.dmytro@gmail.com</a>.</p>
+          </form>
+        </section>
       </div>
     </section>
   </main>
@@ -95,6 +147,7 @@
           <li><a href="index.html">Головна</a></li>
           <li><a href="how-it-works.html">Як це працює</a></li>
           <li><a href="how-its-made.html">Як це зроблено</a></li>
+          <li><a href="news.html">Новини</a></li>
           <li><a href="features.html">Можливості</a></li>
           <li><a href="about.html">Про нас</a></li>
           <li><a href="contact.html">Контакти</a></li>

@@ -3,12 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How It's Made | FallSena</title>
+  <title>How It's Made: Building the Fall Detector | FallSena</title>
   <meta name="description" content="A behind the scenes look at how FallSena was built: modeling the enclosure, designing a custom circuit board, soldering it, and assembling the finished wearable.">
+  <meta name="theme-color" content="#070c18">
+  <link rel="icon" type="image/svg+xml" href="fallsena-icon.svg">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="alternate" hreflang="en" href="how-its-made.html">
-  <link rel="alternate" hreflang="uk" href="uk/how-its-made.html">
-  <link rel="alternate" hreflang="ru" href="ru/how-its-made.html">
+  <link rel="canonical" href="https://fallsena.com/how-its-made.html">
+  <link rel="alternate" hreflang="en" href="https://fallsena.com/how-its-made.html">
+  <link rel="alternate" hreflang="uk" href="https://fallsena.com/uk/how-its-made.html">
+  <link rel="alternate" hreflang="ru" href="https://fallsena.com/ru/how-its-made.html">
+  <link rel="alternate" hreflang="x-default" href="https://fallsena.com/how-its-made.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FallSena">
+  <meta property="og:title" content="How It's Made: Building the Fall Detector | FallSena">
+  <meta property="og:description" content="A behind the scenes look at how FallSena was built: modeling the enclosure, designing a custom circuit board, soldering it, and assembling the finished wearable.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="uk_UA">
+  <meta property="og:locale:alternate" content="ru_RU">
+  <meta property="og:url" content="https://fallsena.com/how-its-made.html">
+  <meta property="og:image" content="https://fallsena.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="FallSena logo with the tagline IoT Fall Detection on a dark background">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://fallsena.com/images/og-image.png">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -27,6 +45,7 @@
         <li><a class="nav__link" href="index.html">Home</a></li>
         <li><a class="nav__link" href="how-it-works.html">How It Works</a></li>
         <li><a class="nav__link" href="how-its-made.html" aria-current="page">How It's Made</a></li>
+        <li><a class="nav__link" href="news.html">News</a></li>
         <li><a class="nav__link" href="features.html">Features</a></li>
         <li><a class="nav__link" href="about.html">About</a></li>
         <li><a class="nav__link" href="contact.html">Contact</a></li>
@@ -50,11 +69,11 @@
         <div class="build-section__media">
           <div class="build-gallery">
             <figure class="build-figure">
-              <img class="build-figure__img build-figure__img--contain" src="images/caseCAD.png" alt="Fusion 360 render of the open FallSena enclosure case, showing its empty interior and the cutouts in its walls" loading="lazy">
+              <img class="build-figure__img build-figure__img--contain" src="images/caseCAD.png" width="1459" height="940" alt="Fusion 360 render of the open FallSena enclosure case, showing its empty interior and the cutouts in its walls" loading="lazy">
               <figcaption class="build-figure__label">Enclosure case, CAD model</figcaption>
             </figure>
             <figure class="build-figure">
-              <img class="build-figure__img build-figure__img--contain" src="images/lidCAD.png" alt="Fusion 360 render of the FallSena enclosure lid with the FallSena logo, an SOS button opening, and a Cancel button opening" loading="lazy">
+              <img class="build-figure__img build-figure__img--contain" src="images/lidCAD.png" width="1836" height="889" alt="Fusion 360 render of the FallSena enclosure lid with the FallSena logo, an SOS button opening, and a Cancel button opening" loading="lazy">
               <figcaption class="build-figure__label">Enclosure lid, CAD model</figcaption>
             </figure>
           </div>
@@ -73,11 +92,11 @@
         <div class="build-section__media">
           <div class="build-gallery">
             <figure class="build-figure">
-              <img class="build-figure__img build-figure__img--contain" src="images/virtualSchematic.png" alt="KiCad schematic of the FallSena board, connecting the ESP32-C6 module, MPU6050 sensor, RGB LED, buttons, and battery" loading="lazy">
+              <img class="build-figure__img build-figure__img--contain" src="images/virtualSchematic.png" width="991" height="1134" alt="KiCad schematic of the FallSena board, connecting the ESP32-C6 module, MPU6050 sensor, RGB LED, buttons, and battery" loading="lazy">
               <figcaption class="build-figure__label">Schematic diagram</figcaption>
             </figure>
             <figure class="build-figure">
-              <img class="build-figure__img build-figure__img--contain" src="images/boardLayout.png" alt="KiCad board layout showing where the ESP32-C6 module, MPU6050 sensor, buttons, and RGB LED sit on the FallSena board, with traces routed between them" loading="lazy">
+              <img class="build-figure__img build-figure__img--contain" src="images/boardLayout.png" width="1707" height="722" alt="KiCad board layout showing where the ESP32-C6 module, MPU6050 sensor, buttons, and RGB LED sit on the FallSena board, with traces routed between them" loading="lazy">
               <figcaption class="build-figure__label">Board layout</figcaption>
             </figure>
           </div>
@@ -96,11 +115,11 @@
         <div class="build-section__media">
           <div class="build-gallery">
             <figure class="build-figure">
-              <img class="build-figure__img" src="images/bareBoard.jpg" alt="The green FallSena circuit board before any parts were soldered on, with the outline and label of each part printed on it" loading="lazy">
+              <img class="build-figure__img" src="images/bareBoard-web.jpg" width="1600" height="1200" alt="The green FallSena circuit board before any parts were soldered on, with the outline and label of each part printed on it" loading="lazy">
               <figcaption class="build-figure__label">Bare board</figcaption>
             </figure>
             <figure class="build-figure">
-              <img class="build-figure__img" src="images/solderedBoard.jpg" alt="The FallSena board with its parts soldered on, including the ESP32-C6 module, the MPU6050 sensor, a red and a grey button, and red and black battery leads" loading="lazy">
+              <img class="build-figure__img" src="images/solderedBoard-web.jpg" width="1600" height="1200" alt="The FallSena board with its parts soldered on, including the ESP32-C6 module, the MPU6050 sensor, a red and a grey button, and red and black battery leads" loading="lazy">
               <figcaption class="build-figure__label">Finished board</figcaption>
             </figure>
           </div>
@@ -119,7 +138,7 @@
         <div class="build-section__media">
           <div class="build-gallery build-gallery--single">
             <figure class="build-figure">
-              <img class="build-figure__img build-figure__img--natural" src="images/EncasedDevice.jpg" alt="The assembled FallSena device: a white enclosure with a red SOS button, a grey Cancel button, and the FallSena logo on the lid" loading="lazy">
+              <img class="build-figure__img build-figure__img--natural" src="images/EncasedDevice-web.jpg" width="1600" height="1474" alt="The assembled FallSena device: a white enclosure with a red SOS button, a grey Cancel button, and the FallSena logo on the lid" loading="lazy">
               <figcaption class="build-figure__label">Finished device</figcaption>
             </figure>
           </div>
@@ -153,6 +172,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="how-it-works.html">How It Works</a></li>
           <li><a href="how-its-made.html">How It's Made</a></li>
+          <li><a href="news.html">News</a></li>
           <li><a href="features.html">Features</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>

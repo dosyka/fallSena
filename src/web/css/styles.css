@@ -194,14 +194,15 @@ h3 {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.2rem;
   margin: 0;
   padding: 0;
 }
 
 .nav__link {
   display: inline-block;
-  padding: var(--space-xs) 0.65rem;
+  padding: var(--space-xs) 0.45rem;
+  font-size: 0.9rem;
   border-radius: 0.55rem;
   color: var(--color-text-muted);
   font-weight: 600;
@@ -784,11 +785,12 @@ main {
   }
 }
 
-/* Nav breakpoints (#W22c, #W23c): 6 links + the EN/UKR/RUS group, sized so
-   the longest (Russian) labels fit on one line. Hamburger at 990px and below;
-   compact desktop nav between 991px and 1099px (the container reaches its
-   full width at 1100px). */
-@media (max-width: 990px) {
+/* Nav breakpoints (#W22c, #W23c, #W23-FIX1, #W24): 7 links + the EN/UKR/RUS
+   group, sized so the longest (Russian) labels fit on one line with at least
+   40px to spare (measured: RU 46px at >=1100px, 55px at 1040px). Hamburger at
+   1039px and below; compact desktop nav between 1040px and 1099px (the
+   container reaches its full width at 1100px). */
+@media (max-width: 1039px) {
   .nav__toggle {
     display: inline-block;
   }
@@ -819,6 +821,7 @@ main {
   .nav__link {
     display: block;
     padding: var(--space-sm);
+    font-size: 1rem;
   }
 
   .nav__langs {
@@ -831,18 +834,18 @@ main {
   }
 }
 
-@media (min-width: 991px) and (max-width: 1099px) {
+@media (min-width: 1040px) and (max-width: 1099px) {
   .nav__list {
-    gap: 0.25rem;
+    gap: 0.15rem;
   }
 
   .nav__link {
-    font-size: 0.9rem;
-    padding: var(--space-xs) 0.55rem;
+    font-size: 0.86rem;
+    padding: var(--space-xs) 0.4rem;
   }
 
   .nav__langs {
-    margin-left: 0.25rem;
+    margin-left: 0.2rem;
   }
 
   .nav__lang {
@@ -954,6 +957,9 @@ main {
   display: block;
   width: 100%;
   max-width: 100%;
+  /* Keep CSS in charge of rendered height: the width/height attributes on
+     the <img> only reserve space, they must not set a pixel height. */
+  height: auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: var(--radius);
@@ -1070,4 +1076,99 @@ main {
     animation: none !important;
     transition: none !important;
   }
+}
+
+/* ==========================================================================
+   News page (#W24)
+   A single-column list of .card posts, newest first. A post with an image
+   (.news-card__media) gets a two-column layout: image left, text right;
+   posts without one are plain text cards. Stacks at 800px.
+   ========================================================================== */
+
+.news-list {
+  display: grid;
+  gap: var(--space-lg);
+  max-width: 860px;
+}
+
+.news-card {
+  display: grid;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+.news-card:has(.news-card__media) {
+  grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+}
+
+.news-card__media {
+  margin: 0;
+  min-width: 0;
+}
+
+.news-card__img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+/* Fill-in placeholder for an optional post image (no <img> yet). */
+.news-card__placeholder {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: var(--space-xs);
+  aspect-ratio: 4 / 3;
+  padding: var(--space-md);
+  background: var(--color-surface-alt);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius);
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.news-card__placeholder svg {
+  width: 2.5rem;
+  height: 2.5rem;
+  opacity: 0.6;
+}
+
+.news-card__body {
+  min-width: 0;
+}
+
+.news-card__date {
+  display: block;
+  margin-bottom: var(--space-xs);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--color-accent-bright);
+}
+
+.news-card__title {
+  margin: 0 0 var(--space-xs);
+  font-size: 1.3rem;
+}
+
+@media (max-width: 800px) {
+  .news-card:has(.news-card__media) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ==========================================================================
+   Contact page: "Order a device" card (#W25)
+   Reuses .card + .form; only keeps the #order anchor clear of the sticky
+   header when linked to directly.
+   ========================================================================== */
+
+.order-card {
+  scroll-margin-top: 6rem;
 }

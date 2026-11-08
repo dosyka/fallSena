@@ -3,12 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Як це зроблено | FallSena</title>
-  <meta name="description" content="Погляд за лаштунки створення FallSena: моделювання корпусу, розробка власної друкованої плати, її пайка та складання готового носимого пристрою.">
+  <title>Як це зроблено: створення детектора падінь | FallSena</title>
+  <meta name="description" content="Погляд за лаштунки створення FallSena: моделювання корпусу, розробка власної друкованої плати, її паяння та складання готового носимого пристрою.">
+  <meta name="theme-color" content="#070c18">
+  <link rel="icon" type="image/svg+xml" href="../fallsena-icon.svg">
   <link rel="stylesheet" href="../css/styles.css">
-  <link rel="alternate" hreflang="en" href="../how-its-made.html">
-  <link rel="alternate" hreflang="uk" href="how-its-made.html">
-  <link rel="alternate" hreflang="ru" href="../ru/how-its-made.html">
+  <link rel="canonical" href="https://fallsena.com/uk/how-its-made.html">
+  <link rel="alternate" hreflang="en" href="https://fallsena.com/how-its-made.html">
+  <link rel="alternate" hreflang="uk" href="https://fallsena.com/uk/how-its-made.html">
+  <link rel="alternate" hreflang="ru" href="https://fallsena.com/ru/how-its-made.html">
+  <link rel="alternate" hreflang="x-default" href="https://fallsena.com/how-its-made.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FallSena">
+  <meta property="og:title" content="Як це зроблено: створення детектора падінь | FallSena">
+  <meta property="og:description" content="Погляд за лаштунки створення FallSena: моделювання корпусу, розробка власної друкованої плати, її паяння та складання готового носимого пристрою.">
+  <meta property="og:locale" content="uk_UA">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="ru_RU">
+  <meta property="og:url" content="https://fallsena.com/uk/how-its-made.html">
+  <meta property="og:image" content="https://fallsena.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Логотип FallSena з підписом IoT Fall Detection на темному тлі">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://fallsena.com/images/og-image.png">
 </head>
 <body>
   <a class="skip-link" href="#main">Перейти до основного вмісту</a>
@@ -27,6 +45,7 @@
         <li><a class="nav__link" href="index.html">Головна</a></li>
         <li><a class="nav__link" href="how-it-works.html">Як це працює</a></li>
         <li><a class="nav__link" href="how-its-made.html" aria-current="page">Як це зроблено</a></li>
+        <li><a class="nav__link" href="news.html">Новини</a></li>
         <li><a class="nav__link" href="features.html">Можливості</a></li>
         <li><a class="nav__link" href="about.html">Про нас</a></li>
         <li><a class="nav__link" href="contact.html">Контакти</a></li>
@@ -50,11 +69,11 @@
         <div class="build-section__media">
           <div class="build-gallery">
             <figure class="build-figure">
-              <img class="build-figure__img build-figure__img--contain" src="../images/caseCAD.png" alt="Рендер відкритої основи корпусу FallSena у Fusion 360: видно порожню внутрішню частину та вирізи в стінках" loading="lazy">
+              <img class="build-figure__img build-figure__img--contain" src="../images/caseCAD.png" width="1459" height="940" alt="Рендер відкритої основи корпусу FallSena у Fusion 360: видно порожню внутрішню частину та вирізи в стінках" loading="lazy">
               <figcaption class="build-figure__label">Основа корпусу, CAD-модель</figcaption>
             </figure>
             <figure class="build-figure">
-              <img class="build-figure__img build-figure__img--contain" src="../images/lidCAD.png" alt="Рендер кришки корпусу FallSena у Fusion 360 з логотипом FallSena, отвором для кнопки SOS та отвором для кнопки скасування" loading="lazy">
+              <img class="build-figure__img build-figure__img--contain" src="../images/lidCAD.png" width="1836" height="889" alt="Рендер кришки корпусу FallSena у Fusion 360 з логотипом FallSena, отвором для кнопки SOS та отвором для кнопки скасування" loading="lazy">
               <figcaption class="build-figure__label">Кришка корпусу, CAD-модель</figcaption>
             </figure>
           </div>
@@ -73,11 +92,11 @@
         <div class="build-section__media">
           <div class="build-gallery">
             <figure class="build-figure">
-              <img class="build-figure__img build-figure__img--contain" src="../images/virtualSchematic.png" alt="Принципова схема плати FallSena у KiCad, що з’єднує модуль ESP32-C6, датчик MPU6050, RGB-світлодіод, кнопки та акумулятор" loading="lazy">
+              <img class="build-figure__img build-figure__img--contain" src="../images/virtualSchematic.png" width="991" height="1134" alt="Принципова схема плати FallSena у KiCad, що з’єднує модуль ESP32-C6, датчик MPU6050, RGB-світлодіод, кнопки та акумулятор" loading="lazy">
               <figcaption class="build-figure__label">Принципова схема</figcaption>
             </figure>
             <figure class="build-figure">
-              <img class="build-figure__img build-figure__img--contain" src="../images/boardLayout.png" alt="Розведення плати FallSena у KiCad: видно, де розташовані модуль ESP32-C6, датчик MPU6050, кнопки та RGB-світлодіод, а також доріжки між ними" loading="lazy">
+              <img class="build-figure__img build-figure__img--contain" src="../images/boardLayout.png" width="1707" height="722" alt="Розведення плати FallSena у KiCad: видно, де розташовані модуль ESP32-C6, датчик MPU6050, кнопки та RGB-світлодіод, а також доріжки між ними" loading="lazy">
               <figcaption class="build-figure__label">Розведення плати</figcaption>
             </figure>
           </div>
@@ -96,18 +115,18 @@
         <div class="build-section__media">
           <div class="build-gallery">
             <figure class="build-figure">
-              <img class="build-figure__img" src="../images/bareBoard.jpg" alt="Зелена друкована плата FallSena до пайки компонентів, на якій надруковано контур і позначення кожного компонента" loading="lazy">
+              <img class="build-figure__img" src="../images/bareBoard-web.jpg" width="1600" height="1200" alt="Зелена друкована плата FallSena до паяння компонентів, на якій надруковано контур і позначення кожного компонента" loading="lazy">
               <figcaption class="build-figure__label">Чиста плата</figcaption>
             </figure>
             <figure class="build-figure">
-              <img class="build-figure__img" src="../images/solderedBoard.jpg" alt="Плата FallSena із запаяними компонентами, серед яких модуль ESP32-C6, датчик MPU6050, червона та сіра кнопки, а також червоний і чорний дроти акумулятора" loading="lazy">
+              <img class="build-figure__img" src="../images/solderedBoard-web.jpg" width="1600" height="1200" alt="Плата FallSena із запаяними компонентами, серед яких модуль ESP32-C6, датчик MPU6050, червона та сіра кнопки, а також червоний і чорний дроти акумулятора" loading="lazy">
               <figcaption class="build-figure__label">Готова плата</figcaption>
             </figure>
           </div>
         </div>
         <div class="build-section__content">
-          <h2 id="assembly-heading">Пайка та складання</h2>
-          <p>Ще до пайки на чистій платі вже є контур і позначення кожного компонента, а також назва FallSena.</p>
+          <h2 id="assembly-heading">Паяння та складання</h2>
+          <p>Ще до паяння на чистій платі вже є контур і позначення кожного компонента, а також назва FallSena.</p>
           <p>Потім кожен компонент припаяли на своє місце, а акумулятор під’єднали парою червоного й чорного дротів.</p>
           <p>Готова плата встановлюється в основу корпусу так, що обидві її кнопки збігаються з отворами в кришці.</p>
         </div>
@@ -119,7 +138,7 @@
         <div class="build-section__media">
           <div class="build-gallery build-gallery--single">
             <figure class="build-figure">
-              <img class="build-figure__img build-figure__img--natural" src="../images/EncasedDevice.jpg" alt="Зібраний пристрій FallSena: білий корпус із червоною кнопкою SOS, сірою кнопкою скасування та логотипом FallSena на кришці" loading="lazy">
+              <img class="build-figure__img build-figure__img--natural" src="../images/EncasedDevice-web.jpg" width="1600" height="1474" alt="Зібраний пристрій FallSena: білий корпус із червоною кнопкою SOS, сірою кнопкою скасування та логотипом FallSena на кришці" loading="lazy">
               <figcaption class="build-figure__label">Готовий пристрій</figcaption>
             </figure>
           </div>
@@ -153,6 +172,7 @@
           <li><a href="index.html">Головна</a></li>
           <li><a href="how-it-works.html">Як це працює</a></li>
           <li><a href="how-its-made.html">Як це зроблено</a></li>
+          <li><a href="news.html">Новини</a></li>
           <li><a href="features.html">Можливості</a></li>
           <li><a href="about.html">Про нас</a></li>
           <li><a href="contact.html">Контакти</a></li>

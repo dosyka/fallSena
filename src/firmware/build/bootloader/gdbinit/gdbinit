@@ -1,0 +1,2 @@
+source /home/home/Documents/fallSena/src/firmware/build/bootloader/gdbinit/symbols
+source /home/home/Documents/fallSena/src/firmware/build/bootloader/gdbinit/connect
